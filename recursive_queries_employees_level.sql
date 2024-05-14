@@ -35,7 +35,7 @@ left join employees m on e.manager_id=m.employee_id;
 with recursive employee_level as (
 -- bazowe zapytanie wykorzystane w pierwszej iteracji. 
 -- Ustalamy poziom nr 1 dla pracownika bez przełożonych. NULL w kolumnie 'manager_id'
-	select employee_id, employee_name, 1 as emp_level
+    select employee_id, employee_name, 1 as emp_level
     from employees
     where manager_id is null
     
