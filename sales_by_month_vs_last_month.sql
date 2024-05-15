@@ -38,8 +38,8 @@ group by product, date
 select product, date,
 	round((
 		total_sales/
-				lag(total_sales) over (partition by product order by date)) 
-                * 100, 1)
+			lag(total_sales) over (partition by product order by date)) 
+                		* 100, 1)
 					- 100 as vs_last_month
 	-- funkcja LAG(), która odwołuje się do poprzedniego rekordu.
     -- Dzięki temu sprzedaż można podzielić przez sprzedaż z poprzedniego miesiąca i uzyskać 
